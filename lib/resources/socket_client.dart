@@ -5,12 +5,10 @@ class SocketClient {
   static SocketClient? _instance;
 
   SocketClient._internal() {
-    socket = sio.io(
-        'https://multiplayerserver-h3fx19uyw-arteiuswastaken.vercel.app',
-        <String, dynamic>{
-          'transports': ['websocket'],
-          'autoConnect': false,
-        });
+    socket = sio.io('https://multiplayerserver.vercel.app/', <String, dynamic>{
+      'transports': ['websocket'],
+      'autoConnect': false,
+    });
     socket!.connect();
   }
 
