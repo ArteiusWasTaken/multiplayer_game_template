@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const playerSchema = require("./player");
 
-const roomShcema = new mongoose.Schema({
+const roomSchema = new mongoose.Schema({
   occupancy: {
     type: Number,
     default: 2,
@@ -10,7 +10,7 @@ const roomShcema = new mongoose.Schema({
     type: Number,
     default: 6,
   },
-  curentRound: {
+  currentRound: {
     required: true,
     type: Number,
     default: 1,
@@ -27,5 +27,5 @@ const roomShcema = new mongoose.Schema({
   },
 });
 
-const roomModel = mongoose.model("Room", roomShcema);
+const roomModel = mongoose.model("Room", roomSchema);
 module.exports = roomModel;

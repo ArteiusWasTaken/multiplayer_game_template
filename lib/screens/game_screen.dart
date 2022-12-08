@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:multiplayer_game/provider/room_data_provider.dart';
+import 'package:multiplayer_game/resources/socket_methods.dart';
+import 'package:multiplayer_game/views/scoreboard.dart';
+import 'package:multiplayer_game/views/tictactoe_board.dart';
+import 'package:multiplayer_game/views/waiting_lobby.dart';
 import 'package:provider/provider.dart';
 
 class GameScreen extends StatefulWidget {
@@ -11,12 +15,35 @@ class GameScreen extends StatefulWidget {
 }
 
 class _GameScreenState extends State<GameScreen> {
+  final SocketMethods _socketMethods = SocketMethods();
+
+  @override
+  void initState() {
+    super.initState();
+    _socketMethods.updateRoomListener(context);
+    _socketMethods.updatePlayersStateListener(context);
+    _socketMethods.pointIncreaseListener(context);
+    _socketMethods.endGameListener(context);
+  }
+
   @override
   Widget build(BuildContext context) {
+    RoomDataProvider roomDataProvider = Provider.of<RoomDataProvider>(context);
+
     return Scaffold(
-      body: Center(
-        child: Text(Provider.of<RoomDataProvider>(context).roomData.toString()),
-      ),
+      body: roomDataProvider.roomData['isJoin']
+          ? const WaitingLobby()
+          : SafeArea(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  const Scoreboard(),
+                  const TicTacToeBoard(),
+                  Text(
+                      '${roomDataProvider.roomData['turn']['nickname']}\'s turn'),
+                ],
+              ),
+            ),
     );
   }
 }

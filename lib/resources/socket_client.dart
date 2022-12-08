@@ -1,18 +1,19 @@
-import 'package:socket_io_client/socket_io_client.dart' as io;
+import 'package:socket_io_client/socket_io_client.dart' as sio;
 
 class SocketClient {
-  io.Socket? socket;
+  sio.Socket? socket;
   static SocketClient? _instance;
 
-  SocketClient._intetnal() {
-    socket = io.io('http://10.0.21.148:3000', <String, dynamic>{
+  SocketClient._internal() {
+    socket = sio.io('http://10.0.21.148:3000', <String, dynamic>{
       'transports': ['websocket'],
       'autoConnect': false,
     });
     socket!.connect();
   }
+
   static SocketClient get instance {
-    _instance ??= SocketClient._intetnal();
+    _instance ??= SocketClient._internal();
     return _instance!;
   }
 }
