@@ -6,7 +6,7 @@ class SocketClient {
 
   SocketClient._internal() {
     socket = sio.io(
-        'https://multiplayerserver-8am4autwj-arteiuswastaken.vercel.app',
+        'https://multiplayerserver-h3fx19uyw-arteiuswastaken.vercel.app',
         <String, dynamic>{
           'transports': ['websocket'],
           'autoConnect': false,
