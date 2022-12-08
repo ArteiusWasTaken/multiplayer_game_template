@@ -5,7 +5,7 @@ class SocketClient {
   static SocketClient? _instance;
 
   SocketClient._internal() {
-    socket = sio.io('http://multiplayerserver.vercel.app/', <String, dynamic>{
+    socket = sio.io('https://mpserver.vercel.app', <String, dynamic>{
       'transports': ['websocket'],
       'autoConnect': false,
     });
