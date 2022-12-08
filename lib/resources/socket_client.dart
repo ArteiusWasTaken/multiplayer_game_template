@@ -5,7 +5,8 @@ class SocketClient {
   static SocketClient? _instance;
 
   SocketClient._internal() {
-    socket = sio.io('http://10.0.21.148:3000', <String, dynamic>{
+    socket = sio
+        .io('https://lighthearted-crisp-b9f98f.netlify.app', <String, dynamic>{
       'transports': ['websocket'],
       'autoConnect': false,
     });
