@@ -5,11 +5,12 @@ class SocketClient {
   static SocketClient? _instance;
 
   SocketClient._internal() {
-    socket = sio
-        .io('https://lighthearted-crisp-b9f98f.netlify.app', <String, dynamic>{
-      'transports': ['websocket'],
-      'autoConnect': false,
-    });
+    socket = sio.io(
+        'https://multiplayerserver-8am4autwj-arteiuswastaken.vercel.app',
+        <String, dynamic>{
+          'transports': ['websocket'],
+          'autoConnect': false,
+        });
     socket!.connect();
   }
 
