@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:multiplayer_game/resources/socket_methods.dart';
 import 'package:multiplayer_game/responsive/responsive.dart';
 import 'package:multiplayer_game/widgets/widgets.dart';
 
@@ -13,6 +14,14 @@ class CreateRoomScreen extends StatefulWidget {
 
 class _CreateRoomScreenState extends State<CreateRoomScreen> {
   final TextEditingController _nameController = TextEditingController();
+  final SocketMethods _socketMethods = SocketMethods();
+
+  @override
+  void initState() {
+    super.initState();
+    _socketMethods.createRoomSuccessListener(context);
+  }
+
   @override
   void dispose() {
     super.dispose();
@@ -39,7 +48,9 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
               CustomTextField(
                   hintText: 'Enter your Nickname', controller: _nameController),
               SizedBox(height: size.height * 0.08),
-              CustomButton(onTap: () {}, text: 'Create')
+              CustomButton(
+                  onTap: () => _socketMethods.createRoom(_nameController.text),
+                  text: 'Create')
             ],
           ),
         ),

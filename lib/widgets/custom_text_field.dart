@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:multiplayer_game/utils/utils.dart';
+import 'package:multiplayer_game/utils/colors.dart';
 
 class CustomTextField extends StatelessWidget {
   final String hintText;
