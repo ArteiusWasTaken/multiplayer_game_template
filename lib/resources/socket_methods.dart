@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:socket_io_client/socket_io_client.dart';
+
 import 'package:multiplayer_game/provider/room_data_provider.dart';
 import 'package:multiplayer_game/resources/game_methods.dart';
 import 'package:multiplayer_game/resources/socket_client.dart';
 import 'package:multiplayer_game/screens/game_screen.dart';
 import 'package:multiplayer_game/utils/utils.dart';
-import 'package:provider/provider.dart';
-import 'package:socket_io_client/socket_io_client.dart';
 
 class SocketMethods {
   final _socketClient = SocketClient.instance.socket!;

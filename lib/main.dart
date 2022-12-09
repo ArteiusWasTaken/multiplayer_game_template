@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import 'package:multiplayer_game/provider/room_data_provider.dart';
 import 'package:multiplayer_game/screens/create_room_screen.dart';
 import 'package:multiplayer_game/screens/game_screen.dart';
 import 'package:multiplayer_game/screens/join_room_screen.dart';
 import 'package:multiplayer_game/screens/main_screen.dart';
 import 'package:multiplayer_game/utils/colors.dart';
-import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());

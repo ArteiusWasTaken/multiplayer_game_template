@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import 'package:multiplayer_game/provider/room_data_provider.dart';
 import 'package:multiplayer_game/resources/socket_methods.dart';
 import 'package:multiplayer_game/views/scoreboard.dart';
 import 'package:multiplayer_game/views/tictactoe_board.dart';
 import 'package:multiplayer_game/views/waiting_lobby.dart';
-import 'package:provider/provider.dart';
 
 class GameScreen extends StatefulWidget {
   static String routeName = '/game';

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:multiplayer_game/provider/room_data_provider.dart';
-import 'package:multiplayer_game/utils/utils.dart';
 import 'package:provider/provider.dart';
 import 'package:socket_io_client/socket_io_client.dart';
+
+import 'package:multiplayer_game/provider/room_data_provider.dart';
+import 'package:multiplayer_game/utils/utils.dart';
 
 class GameMethods {
   void checkWinner(BuildContext context, Socket socketClent) {
