@@ -5,13 +5,11 @@ class SocketClient {
   static SocketClient? _instance;
 
   SocketClient._internal() {
-    socket = IO.io(
-        'https://mpserver.vercel.app',
-        IO.OptionBuilder()
-            .setTransports(['websocket']) // for Flutter or Dart VM
-            .disableAutoConnect() // disable auto-connection
-            .setExtraHeaders({'foo': 'bar'}) // optional
-            .build());
+    socket =
+        IO.io('https://multiplayer-game-ashen.vercel.app', <String, dynamic>{
+      'transports': ['websocket'],
+      'autoConnect': false,
+    });
     socket!.connect();
   }
 
