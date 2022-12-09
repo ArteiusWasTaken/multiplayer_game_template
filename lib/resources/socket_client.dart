@@ -6,10 +6,12 @@ class SocketClient {
 
   SocketClient._internal() {
     socket = IO.io(
-        'wss://mpserver365.vercel.app/socket.io/?EIO=3&transport=websocket',
-        <String, dynamic>{
-          'transports': ['websocket'],
-        });
+        'https://mpserver365.vercel.app',
+        IO.OptionBuilder()
+            .setTransports(['websocket']) // for Flutter or Dart VM
+            .disableAutoConnect() // disable auto-connection
+            .setExtraHeaders({'foo': 'bar'}) // optional
+            .build());
     socket!.connect();
   }
 
