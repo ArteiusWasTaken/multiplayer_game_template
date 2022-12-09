@@ -5,12 +5,12 @@ class SocketClient {
   static SocketClient? _instance;
 
   SocketClient._internal() {
-    socket =
-        IO.io('https://multiplayer-game-ashen.vercel.app', <String, dynamic>{
-      'transports': ['websocket'],
-      'autoConnect': false,
-    });
-    print(socket!);
+    socket = IO.io(
+        'http://mpserver-env.eba-4wzp3wvp.us-east-2.elasticbeanstalk.com/',
+        <String, dynamic>{
+          'transports': ['websocket'],
+          'autoConnect': false,
+        });
     socket!.connect();
   }
 
