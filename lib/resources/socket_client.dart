@@ -6,7 +6,7 @@ class SocketClient {
 
   SocketClient._internal() {
     socket = IO.io(
-        'https://mpserver365.vercel.app',
+        'https://mpserver.vercel.app',
         IO.OptionBuilder()
             .setTransports(['websocket']) // for Flutter or Dart VM
             .disableAutoConnect() // disable auto-connection
