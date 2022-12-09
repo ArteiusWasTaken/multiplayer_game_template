@@ -10,6 +10,7 @@ class SocketClient {
       'transports': ['websocket'],
       'autoConnect': false,
     });
+    print(socket!);
     socket!.connect();
   }
 
