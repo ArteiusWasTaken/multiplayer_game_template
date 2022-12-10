@@ -5,13 +5,11 @@ class SocketClient {
   static SocketClient? _instance;
 
   SocketClient._internal() {
-    socket = IO.io(
-        'http://mpserver-env.eba-4wzp3wvp.us-east-2.elasticbeanstalk.com/',
-        <String, dynamic>{
-          'transports': ['websocket'],
-          'autoConnect': false,
-          'secure': false
-        });
+    socket =
+        IO.io('https://mpserver-temik2c6qa-uc.a.run.app', <String, dynamic>{
+      'transports': ['websocket'],
+      'autoConnect': false,
+    });
     socket!.connect();
   }
 
