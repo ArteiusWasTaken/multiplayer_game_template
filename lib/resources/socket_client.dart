@@ -10,6 +10,7 @@ class SocketClient {
         <String, dynamic>{
           'transports': ['websocket'],
           'autoConnect': false,
+          'secure': false
         });
     socket!.connect();
   }
